@@ -2,7 +2,7 @@ import Toybox.Application;
 import Toybox.Lang;
 import Toybox.WatchUi;
 
-class App extends Application.AppBase {
+class App extends AppBase {
 
     function initialize() {
         AppBase.initialize();
@@ -15,7 +15,7 @@ class App extends Application.AppBase {
     }
 
     function getInitialView() as [Views] or [Views, InputDelegates] {
-        return [ new DataView() ];
+        return [ new V02MaxView() ];
     }
 
 }
