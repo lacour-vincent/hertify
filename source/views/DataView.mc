@@ -1,10 +1,26 @@
 import Toybox.Graphics;
 import Toybox.WatchUi;
 
-class heartifyView extends WatchUi.View {
+using Toybox.System;
+using Toybox.UserProfile;
+
+class DataView extends WatchUi.View {
+    var vo2max;
+    var vma;
+    var zones;
 
     function initialize() {
         View.initialize();
+        var profile = UserProfile.getProfile();
+        vo2max = profile.vo2maxRunning;
+        vma = roundToOneDecimal(vo2max / 3.5);
+        zones = UserProfile.getHeartRateZones(UserProfile.HR_ZONE_SPORT_RUNNING);
+        System.println("vo2max = " + vo2max);
+        System.println("vma = " + vma);
+        System.println("zones : ");
+        for(var i = 0; i < zones.size(); i += 1) {
+            System.println("Zone - " + i + " = " + zones[i]);
+        }
     }
 
     // Load your resources here
@@ -31,3 +47,4 @@ class heartifyView extends WatchUi.View {
     }
 
 }
+

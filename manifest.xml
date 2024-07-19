@@ -5,7 +5,7 @@
         Use "Monkey C: Edit Application" from the Visual Studio Code command palette
         to update the application attributes.
     -->
-    <iq:application id="c27f308a-46a6-4486-ab01-e9f99280b77a" type="widget" name="@Strings.AppName" entry="heartifyApp" launcherIcon="@Drawables.LauncherIcon" minApiLevel="5.0.0">
+    <iq:application id="c27f308a-46a6-4486-ab01-e9f99280b77a" type="widget" name="@Strings.AppName" entry="App" launcherIcon="@Drawables.LauncherIcon" minApiLevel="5.0.0">
         <!--
             Use the following from the Visual Studio Code comand palette to edit
             the build targets:
@@ -20,7 +20,9 @@
             Use "Monkey C: Edit Permissions" from the Visual Studio Code command
             palette to update permissions.
         -->
-        <iq:permissions/>
+        <iq:permissions>
+            <iq:uses-permission id="UserProfile"/>
+        </iq:permissions>
         <!--
             Use "Monkey C: Edit Languages" from the Visual Studio Code command
             palette to edit your compatible language list.
