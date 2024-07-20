@@ -6,30 +6,26 @@ using Toybox.System;
 using Toybox.UserProfile;
 
 class HeartZonesView extends View {
-    var zones as Array<Number>;
+    private var _zones as Array<Number>;
 
     function initialize() {
         View.initialize();
-        zones = UserProfile.getHeartRateZones(UserProfile.HR_ZONE_SPORT_RUNNING);
-        System.println("zones : ");
-        for(var i = 0; i < zones.size(); i += 1) {
-            System.println("Zone - " + i + " = " + zones[i]);
-        }
+        _zones = UserProfile.getHeartRateZones(UserProfile.HR_ZONE_SPORT_RUNNING);
     }
 
     function getZoneLabel(zone as Number) as String {
-        if (zones.size() != 6) { return "N/A"; }
-        switch(zone){
+        if (_zones.size() != 6) { return "N/A"; }
+        switch(_zones){
             case 1:
-                return zones[0].format("%d") + "  -  " + zones[1].format("%d");
+                return _zones[0].format("%d") + "  -  " + _zones[1].format("%d");
             case 2:
-                return (zones[1] + 1).format("%d") + "  -  " + zones[2].format("%d");
+                return (_zones[1] + 1).format("%d") + "  -  " + _zones[2].format("%d");
             case 3:
-                return (zones[2] + 1).format("%d") + "  -  " + zones[3].format("%d");
+                return (_zones[2] + 1).format("%d") + "  -  " + _zones[3].format("%d");
             case 4:
-                return (zones[3] + 1).format("%d") + "  -  " + zones[4].format("%d");
+                return (_zones[3] + 1).format("%d") + "  -  " + _zones[4].format("%d");
             case 5:
-                return ">  " + zones[4].format("%d");
+                return ">  " + _zones[4].format("%d");
             default:
                 return "N/A";
         }

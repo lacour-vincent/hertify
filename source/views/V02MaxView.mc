@@ -6,22 +6,21 @@ using Toybox.System;
 using Toybox.UserProfile;
 
 class V02MaxView extends View {
-    var vo2max as Float?;
+    private var _vo2max as Float?;
 
     function initialize() {
         View.initialize();
-        vo2max = UserProfile.getProfile().vo2maxRunning;
+        _vo2max = UserProfile.getProfile().vo2maxRunning;
     }
 
     function getV02maxLabel() as String {
-        if (vo2max == null){ return "N/A"; }
-        return vo2max.format("%d");
+        if (_vo2max == null){ return "N/A"; }
+        return _vo2max.format("%d");
     }
 
     function getVMALabel() as String {
-        if (vo2max == null){ return "N/A"; }
-        var vma = vo2max / 3.5;
-        System.println("vma = " + vma);
+        if (_vo2max == null){ return "N/A"; }
+        var vma = _vo2max / 3.5;
         return vma.format("%.1f");
     }
 
