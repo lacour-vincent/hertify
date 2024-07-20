@@ -8,15 +8,13 @@ class App extends AppBase {
         AppBase.initialize();
     }
 
-    function onStart(state as Dictionary?) as Void {
-    }
-
-    function onStop(state as Dictionary?) as Void {
-    }
-
     function getInitialView() as [Views] or [Views, InputDelegates] {
-        return [ new V02MaxView() ];
+        // return [ new V02MaxView() ];
+        return [ new HeartZonesView() ];
     }
+
+    function onStart(state as Dictionary?) as Void {}
+    function onStop(state as Dictionary?) as Void {}
 
 }
 

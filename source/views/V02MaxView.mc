@@ -7,17 +7,10 @@ using Toybox.UserProfile;
 
 class V02MaxView extends View {
     var vo2max as Float?;
-    var zones as Array<Number>;
 
     function initialize() {
         View.initialize();
         vo2max = UserProfile.getProfile().vo2maxRunning;
-        zones = UserProfile.getHeartRateZones(UserProfile.HR_ZONE_SPORT_RUNNING);
-        System.println("vo2max = " + vo2max);
-        System.println("zones : ");
-        for(var i = 0; i < zones.size(); i += 1) {
-            System.println("Zone - " + i + " = " + zones[i]);
-        }
     }
 
     function getV02maxLabel() as String {
