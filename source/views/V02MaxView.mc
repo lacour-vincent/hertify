@@ -25,33 +25,43 @@ class V02MaxView extends View {
     }
 
     function onUpdate(dc as Dc) as Void {
+        var width = dc.getWidth();
+        var height = dc.getHeight();
         dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_BLACK);
         dc.clear();
 
         dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
         dc.drawText(
-            0.25 * dc.getWidth(), 0.35 * dc.getHeight(),                     
+            0.25 * width, 0.35 * height,                     
             Graphics.FONT_XTINY, "VO2max",                          
             Graphics.TEXT_JUSTIFY_CENTER);
         dc.drawText(
-            0.75 * dc.getWidth(), 0.35 * dc.getHeight(),                     
+            0.75 * width, 0.35 * height,                     
             Graphics.FONT_XTINY, "VMA",                          
             Graphics.TEXT_JUSTIFY_CENTER);
 
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
         dc.drawText(
-            0.25 * dc.getWidth(), 0.50 * dc.getHeight(),                     
+            0.25 * width, 0.50 * height,                     
             Graphics.FONT_LARGE, getV02maxLabel(),                          
             Graphics.TEXT_JUSTIFY_CENTER);
         dc.drawText(
-            0.75 * dc.getWidth(), 0.50 * dc.getHeight(),                     
+            0.75 * width, 0.50 * height,                     
             Graphics.FONT_LARGE, getVMALabel(),                          
             Graphics.TEXT_JUSTIFY_CENTER);
             
         dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
         dc.fillRectangle(
-            0.50 * dc.getWidth() - 1, (0.50 - 0.5 * 0.20) * dc.getHeight(),
-            2, 0.20 * dc.getHeight());
+            0.50 * width - 1, (0.50 - 0.5 * 0.20) * height,
+            2, 0.20 * height);
+
+        dc.setColor(Graphics.COLOR_RED, Graphics.COLOR_TRANSPARENT);
+        dc.drawLine(0, 0, width - 1, 0);
+        dc.drawLine(0, 0.5 * height - 1, width - 1, 0.5 * height - 1);
+        dc.drawLine(0, height - 1, width - 1, height - 1);
+        dc.drawLine(0, 0, 0, height - 1);
+        dc.drawLine(0.5 * width, 0, 0.5 * width, height);
+        dc.drawLine(width - 1, 0, width - 1, height - 1);
     }
 
     function onLayout(dc as Dc) as Void {}
