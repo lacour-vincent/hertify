@@ -3,7 +3,7 @@ import Toybox.Lang;
 import Toybox.WatchUi;
 
 class PageIndicatorFactory extends ViewLoopFactory {
-    private const NUM_PAGES = 2;
+    private const NUM_PAGES = 3;
 
     function initialize() {
         ViewLoopFactory.initialize();
@@ -15,6 +15,8 @@ class PageIndicatorFactory extends ViewLoopFactory {
                 return [new $.V02MaxView(), new $.ViewDelegate()];
             case 1:
                 return [new $.HeartZonesView(), new $.ViewDelegate()];
+            case 2:
+                return [new $.PacesView(), new $.ViewDelegate()];
             default:
                 return [new $.V02MaxView(), new $.ViewDelegate()];
         }

@@ -2,7 +2,6 @@ import Toybox.Graphics;
 import Toybox.WatchUi;
 import Toybox.Lang;
 
-using Toybox.System;
 using Toybox.UserProfile;
 
 class HeartZonesView extends View {
@@ -34,6 +33,7 @@ class HeartZonesView extends View {
     function onUpdate(dc as Dc) as Void {
         var width = dc.getWidth();
         var height = dc.getHeight();
+        var font = dc.getFontHeight(Graphics.FONT_SYSTEM_TINY);
         dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_BLACK);
         dc.clear();
 
@@ -64,33 +64,33 @@ class HeartZonesView extends View {
 
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
         dc.drawText(
-            0.825 * width, 0.20 * height,                     
-            Graphics.FONT_SYSTEM_XTINY, getZoneLabel(1),                          
-            Graphics.TEXT_JUSTIFY_VCENTER);
+            0.65 * width, 0.20 * height - 0.5 * font,                     
+            Graphics.FONT_SYSTEM_TINY, getZoneLabel(1),                          
+            Graphics.TEXT_JUSTIFY_CENTER);
         dc.drawText(
-             0.825 * width, 0.35 * height,                     
-            Graphics.FONT_SYSTEM_XTINY, getZoneLabel(2),                       
-            Graphics.TEXT_JUSTIFY_VCENTER);
+             0.65 * width, 0.35 * height - 0.5 * font,                     
+            Graphics.FONT_SYSTEM_TINY, getZoneLabel(2),                       
+            Graphics.TEXT_JUSTIFY_CENTER);
         dc.drawText(
-             0.825 * width, 0.50 * height,                     
-            Graphics.FONT_SYSTEM_XTINY, getZoneLabel(3),                            
-            Graphics.TEXT_JUSTIFY_VCENTER);
+             0.65 * width, 0.50 * height - 0.5 * font,                     
+            Graphics.FONT_SYSTEM_TINY, getZoneLabel(3),                            
+            Graphics.TEXT_JUSTIFY_CENTER);
         dc.drawText(
-             0.825 * width, 0.65 * height,                     
-            Graphics.FONT_SYSTEM_XTINY, getZoneLabel(4),                         
-            Graphics.TEXT_JUSTIFY_VCENTER);
+             0.65 * width, 0.65 * height - 0.5 * font,                     
+            Graphics.FONT_SYSTEM_TINY, getZoneLabel(4),                         
+            Graphics.TEXT_JUSTIFY_CENTER);
         dc.drawText(
-            0.75 * width, 0.80 * height,                     
-            Graphics.FONT_SYSTEM_XTINY, getZoneLabel(5),                           
-            Graphics.TEXT_JUSTIFY_VCENTER);
+            0.65 * width, 0.80 * height - 0.5 * font,                     
+            Graphics.FONT_SYSTEM_TINY, getZoneLabel(5),                           
+            Graphics.TEXT_JUSTIFY_CENTER);
 
-        dc.setColor(Graphics.COLOR_RED, Graphics.COLOR_TRANSPARENT);
-        dc.drawLine(0, 0, width - 1, 0);
-        dc.drawLine(0, 0.5 * height - 1, width - 1, 0.5 * height - 1);
-        dc.drawLine(0, height - 1, width - 1, height - 1);
-        dc.drawLine(0, 0, 0, height - 1);
-        dc.drawLine(0.5 * width, 0, 0.5 * width, height);
-        dc.drawLine(width - 1, 0, width - 1, height - 1);
+        // dc.setColor(Graphics.COLOR_RED, Graphics.COLOR_TRANSPARENT);
+        // dc.drawLine(0, 0, width - 1, 0);
+        // dc.drawLine(0, 0.5 * height - 1, width - 1, 0.5 * height - 1);
+        // dc.drawLine(0, height - 1, width - 1, height - 1);
+        // dc.drawLine(0, 0, 0, height - 1);
+        // dc.drawLine(0.5 * width, 0, 0.5 * width, height);
+        // dc.drawLine(width - 1, 0, width - 1, height - 1);
     }
 
     function onLayout(dc as Dc) as Void {}

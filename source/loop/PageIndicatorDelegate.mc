@@ -10,12 +10,12 @@ class PageIndicatorDelegate extends ViewLoopDelegate {
     }
 
     function onNextView() {
-        _loop.changeView(WatchUi.ViewLoop.DIRECTION_PREVIOUS);
+        _loop.changeView(WatchUi.ViewLoop.DIRECTION_NEXT);
         return true;
     }
 
     function onPreviousView() {
-        _loop.changeView(WatchUi.ViewLoop.DIRECTION_NEXT);
+        _loop.changeView(WatchUi.ViewLoop.DIRECTION_PREVIOUS);
         return true;
     }
 }
