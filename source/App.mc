@@ -10,16 +10,11 @@ class App extends AppBase {
         AppBase.initialize();
     }
 
-    // function getInitialView() as [Views] or [Views, InputDelegates] {
-    //     var factory = new PageIndicatorFactory();
-    //     var loop = new WatchUi.ViewLoop(factory, {:page => 0, :wrap => true });
-    //     return [loop, new PageIndicatorDelegate(loop)];
-    // }
-
     function getInitialView() as [Views] or [Views, InputDelegates] {
-        return [new V02MaxView()];
+        var factory = new PageIndicatorFactory();
+        var loop = new WatchUi.ViewLoop(factory, {:page => 0, :wrap => true, :color => Graphics.COLOR_WHITE });
+        return [loop, new PageIndicatorDelegate(loop)];
     }
-
 
     function onStart(state as Dictionary?) as Void {}
     function onStop(state as Dictionary?) as Void {}

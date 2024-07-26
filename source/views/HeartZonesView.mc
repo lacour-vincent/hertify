@@ -15,7 +15,7 @@ class HeartZonesView extends View {
 
     function getZoneLabel(zone as Number) as String {
         if (_zones.size() != 6) { return "N/A"; }
-        switch(_zones){
+        switch(zone){
             case 1:
                 return _zones[0].format("%d") + "  -  " + _zones[1].format("%d");
             case 2:
