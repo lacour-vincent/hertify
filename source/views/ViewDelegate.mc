@@ -3,11 +3,11 @@ import Toybox.WatchUi;
 
 class ViewDelegate extends BehaviorDelegate {
 
-    public function initialize() {
+    function initialize() {
         BehaviorDelegate.initialize();
     }
 
-    public function onSelect() as Boolean {
+    function onSelect() as Boolean {
         return false;
     }
 }

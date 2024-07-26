@@ -1,7 +1,6 @@
 import Toybox.Lang;
 import Toybox.WatchUi;
 
-
 class PageIndicatorDelegate extends ViewLoopDelegate {
     private var _loop as ViewLoop;
 
