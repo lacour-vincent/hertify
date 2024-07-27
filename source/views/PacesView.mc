@@ -3,6 +3,7 @@ import Toybox.WatchUi;
 import Toybox.Lang;
 
 using Toybox.UserProfile;
+using Toybox.Math;
 
 class PacesView extends View {
     private var _vma as Float?;
@@ -13,7 +14,10 @@ class PacesView extends View {
     }
 
     function getPaceLabel(percentage as Number) as String {
-        var pace = 60 / (0.01 * percentage * _vma);
+        var raw = 60 / (0.01 * percentage * _vma);
+        var minutes = Math.floor(raw);
+        var secondes = (raw - minutes) * 0.6;
+        var pace = minutes + secondes;
         return pace.format("%.2f");
     }
 
