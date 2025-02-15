@@ -4,7 +4,7 @@ A simple Garmin Connect IQ Application to compute the paces according to the VMA
 
 ## Requirements
 
-- [Connect IQ 7.2.1 SDK](https://developer.garmin.com/connect-iq/sdk/)
+- [Connect IQ 7.4.3 SDK](https://developer.garmin.com/connect-iq/sdk/)
 - [Monkey C vscode-extension](https://marketplace.visualstudio.com/items?itemName=garmin.monkey-c)
 
 ## Build
